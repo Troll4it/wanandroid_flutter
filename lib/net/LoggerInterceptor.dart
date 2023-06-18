@@ -255,7 +255,8 @@ class PrettyDioLogger extends Interceptor {
         if (compact && _canFlattenMap(e)) {
           logPrint('║${_indent(tabs)}  $e${!isLast ? ',' : ''}');
         } else {
-          _printPrettyMap(e, initialTab: tabs + 1, isListItem: true, isLast: isLast);
+          _printPrettyMap(e,
+              initialTab: tabs + 1, isListItem: true, isLast: isLast);
         }
       } else {
         logPrint('║${_indent(tabs + 2)} $e${isLast ? '' : ','}');

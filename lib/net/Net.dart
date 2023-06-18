@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:wan/net/pretty_dio_logger.dart';
+import 'package:wan/net/LoggerInterceptor.dart';
 
 import 'Api.dart';
 
