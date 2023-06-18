@@ -1,0 +1,1 @@
+enum NetMethod { get, post }
