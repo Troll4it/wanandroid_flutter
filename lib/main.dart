@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:wan/StackPage.dart';
+import 'package:wan/net/Api.dart';
+import 'package:wan/net/HeaderInterceptor.dart';
+import 'package:wan/net/NetOptions.dart';
 
 import 'ButtonPage.dart';
-import 'MondayPage.dart';
 import 'SystemPage.dart';
 
 void main() {
+  NetOptions.instance
+      .setBaseUrl(Api.BASE_URL)
+      .addInterceptor(HeaderInterceptor())
+      .enableLogger(true)
+      .setConnectTimeout(const Duration(seconds: 30))
+      .setReceiveTimeout(const Duration(seconds: 15))
+      .create();
   runApp(const MyApp());
 }
 

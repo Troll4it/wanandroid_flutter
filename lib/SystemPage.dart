@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:wan/tree_entity.dart';
 
 import 'net/Net.dart';
-import 'net/NetMethod.dart';
 
 class SystemPage extends StatelessWidget {
   @override
@@ -30,10 +29,11 @@ class SystemPage extends StatelessWidget {
   }
 
   void requestData() async {
-    print("请求");
-    var result = await Net().get("/tree/json");
-    print("请求${json.decode(result.data.toString())}");
-    print(
-        "请求:::::${TreeEntity.fromJson(json.decode(result.data)).data?.first.name}");
+    await get("/tool-appbase-service/api/fakeTabModule/getFakeTabModuleConfig", data: {"infoId": "463fbf41d3644815b4fa91f759bab5f7"},
+        onSuccess: (data) {
+      print("请求成功${json.decode(data.toString())}");},
+        onFailure: () {
+      print("请求失败");
+    });
   }
 }

@@ -1,3 +1,3 @@
 class Api {
-  static const String BASE_URL = "https://www.wanandroid.com";
+  static const String BASE_URL = "https://testhuyitool.jidiandian.cn";
 }
