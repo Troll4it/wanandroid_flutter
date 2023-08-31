@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wan/ListPage.dart';
 import 'package:wan/StackPage.dart';
 import 'package:wan/net/Api.dart';
 import 'package:wan/net/HeaderInterceptor.dart';
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     StackPage(),
     ButtonPage(),
-    SystemPage(),
+    const ListPage(),
   ];
 
   @override

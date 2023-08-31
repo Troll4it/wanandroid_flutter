@@ -33,9 +33,6 @@ class ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Http 实践页面'),
-          ),
           //如果 list 为空，展示为空白页面，不为空渲染 ListView
           body: list.isNotEmpty
               ? ListView.builder(
@@ -43,7 +40,8 @@ class ListPageState extends State<ListPage> {
                   itemBuilder: (context, index) {
                     return ListTile(
                         title: Text("${list[index]["name"]}"),
-                        subtitle: Text("${list[index]["link"]}"));
+                        onTap: () {
+                        });
                   })
               : Text("加载中.....")),
     );
